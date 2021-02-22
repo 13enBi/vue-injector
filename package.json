@@ -1,0 +1,37 @@
+{
+	"name": "vue-injector",
+	"version": "0.0.1-beta.1",
+	"description": "vue-injector",
+	"main": "lib/index.js",
+	"module": "esm/index.js",
+	"types": "lib/index.d.ts",
+	"typings": "lib/index.d.ts",
+	"files": [
+		"lib/",
+		"esm/"
+	],
+	"scripts": {
+		"build": "yarn clean && yarn build:cjs && yarn build:es",
+		"build:cjs": "tsc",
+		"build:es": "tsc -m esNext --outDir esm",
+		"clean": "rimraf lib esm"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/13enBi/vue-injector.git"
+	},
+	"keywords": [
+		"vue-injector"
+	],
+	"author": "13enbi",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/13enBi/vue-injector/issues"
+	},
+	"homepage": "https://github.com/13enBi/vue-injector#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"rimraf": "^3.0.2",
+		"vue": "^3.0.5"
+	}
+}
