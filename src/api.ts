@@ -1,16 +1,15 @@
-import { Infer, Provider } from './helper';
-import { defineScopeProviders, getScope, initProvider, getProviderToken, defineProviderToken } from './scope';
+import { Provider } from "./helper";
+import { defineScopeProviders, getScope, initProvider, defineProviderToken } from "./scope";
 
 export const provideService = (...providers: Provider[]) => {
-	const scope = getScope(true);
+    const scope = getScope(true);
 
-	defineScopeProviders(providers, scope);
-	providers.map(defineProviderToken).forEach((provider) => initProvider(provider, scope));
+    defineScopeProviders(providers, scope);
+    providers.map(defineProviderToken).forEach((provider) => initProvider(provider, scope));
 };
 
-export const injectService = <T extends Provider>(service: T): Infer<T> => {
-	const scope = getScope(false);
-	const token = getProviderToken(service);
+export const injectService = <T extends Provider>(provider: T) => {
+    const scope = getScope(false);
 
-	return scope[token as any] || initProvider(service, scope);
+    return initProvider(provider, scope);
 };
