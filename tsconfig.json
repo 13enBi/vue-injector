@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"target": "es2017",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"declaration": true,
+		"strict": true,
+		"sourceMap": false,
+		"rootDir": "./src",
+		"baseUrl": ".",
+		"allowSyntheticDefaultImports": true,
+		"lib": ["esnext", "dom"],
+		"outDir": "lib"
+	},
+	"include": ["src/**/*.ts"]
+}
